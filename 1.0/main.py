@@ -17,6 +17,13 @@ camera = Camera()
 clock = pygame.time.Clock()
 screen = pygame.display.set_mode(size)
 
+pygame.mixer.music.load(
+    "C:/Users/Asabina/Downloads/PygameProject-master/PygameProject-master/1.0/Зема - Space_(YoSound.ru).mp3")
+pygame.mixer.music.play()
+pewpew = pygame.mixer.Sound(
+    "C:/Users/Asabina/Downloads/PygameProject-master/PygameProject-master/1.0/pew.wav")
+# фоновый музон и звук выстрела
+
 lvl = load_level('level.txt')
 player, width, height = generate_level(lvl)
 i = 0
@@ -49,6 +56,8 @@ while running:
             if event.key == 32:
                 player.make_pew(kind_of_pew, pos, move_gg_up, move_gg_down,
                                 move_gg_left, move_gg_right)
+                pewpew.play()
+                # нужно доделать
         if event.type == pygame.KEYUP:
             if event.key == 119:
                 move_gg_up = False
