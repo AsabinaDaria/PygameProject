@@ -4,7 +4,7 @@ from class_bullets import *
 ### класс basic пуль ###
 
 
-class BasicBullets(Bullets):
+class BasicBullet(Bullet):
     def __str__(self):
         return 'basic_bullets'
 

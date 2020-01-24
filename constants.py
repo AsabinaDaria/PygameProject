@@ -4,7 +4,7 @@ from pygame import *
 import os
 
 ### более-пельменее важные константы ###
-size = width, height = 800, 600  # размер окна
+size = width, height = 1366, 840  # размер окна
 running = True  # работает игра или нет (хотя это, наверно, понятно)
 fps = 60  # ну кол-во кадров в секунду что же ещё
 x_gg, y_gg = 0, 0  # начальная позиция гг
@@ -19,10 +19,13 @@ move_gg_right = False
 
 all_sprites = pygame.sprite.Group()
 tiles_group = pygame.sprite.Group()
+no_go_tiles_group = pygame.sprite.Group()
 player_group = pygame.sprite.Group()
 enemy_group = pygame.sprite.Group()
 bullets_group = pygame.sprite.Group()
 mels_group = pygame.sprite.Group()
+hearts_group = pygame.sprite.Group()
 
 # для клеточного поля
 tile_width = tile_height = 50
+mouse_flag = False
