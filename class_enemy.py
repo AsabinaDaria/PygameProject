@@ -54,8 +54,8 @@ class Enemy(Basic):
                 #    self.x_change(+1)
                 #self.rect.left += 1
 
-            if (tar_y - 40 <= self.y and tar_y + 40 >= self.y
-                    and tar_x - 40 <= self.x and tar_x + 40 >= self.x):
+            if (tar_y - 40 <= self.y and tar_y + 40 >= self.y and
+                    tar_x - 40 <= self.x and tar_x + 40 >= self.x):
                 if self.tics + 500 < pygame.time.get_ticks():
                     self.tics = pygame.time.get_ticks()
                     self.hit = pygame.mixer.Sound("Data/hit.wav")
@@ -63,7 +63,7 @@ class Enemy(Basic):
                     self.ht = self.counter_hp()
                     if self.alive:
                         self.heart = Heart(load_image("dead_heart.jpg", Color('white')), 1, 1,
-                                       self.ht, 0)
+                                           self.ht, 0)
 
     def counter_hp(self):
         if self.sp:
@@ -104,9 +104,7 @@ class Enemy(Basic):
     def get_hitted(self):
         self.chars[1] -= 1
         if self.chars[1] == 0:
-            self.rect.left -= 900
-            self.rect.top -= 900
-            self.alive = False
+            self.kill()
 
     def is_alive(self):
         return(self.alive)

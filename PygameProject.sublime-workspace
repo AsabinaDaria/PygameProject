@@ -4,146 +4,6 @@
 		"selected_items":
 		[
 			[
-				"move",
-				"move_gg_left"
-			],
-			[
-				"loa",
-				"load_image"
-			],
-			[
-				"pla",
-				"player_dote"
-			],
-			[
-				"Player",
-				"player_dote"
-			],
-			[
-				"player",
-				"player_dote"
-			],
-			[
-				"end",
-				"end_level_flag"
-			],
-			[
-				"en",
-				"enemy_group"
-			],
-			[
-				"im",
-				"import"
-			],
-			[
-				"get",
-				"get_pos"
-			],
-			[
-				"make",
-				"make_pew_mel"
-			],
-			[
-				"rect_",
-				"rect_top_to_work"
-			],
-			[
-				"rect",
-				"rect_top_to_work"
-			],
-			[
-				"re",
-				"rect_top_to_work"
-			],
-			[
-				"hero",
-				"hero_speed"
-			],
-			[
-				"tar",
-				"tar_y"
-			],
-			[
-				"new",
-				"new_enemy"
-			],
-			[
-				"mo",
-				"move_right"
-			],
-			[
-				"mov",
-				"move_gg_left"
-			],
-			[
-				"m",
-				"move_gg_right"
-			],
-			[
-				"move_",
-				"move_gg_up"
-			],
-			[
-				"basic",
-				"basic_bullet_sprite"
-			],
-			[
-				"a",
-				"all_sprites"
-			],
-			[
-				"p",
-				"player"
-			],
-			[
-				"ti",
-				"tiles_group"
-			],
-			[
-				"g",
-				"generate_level"
-			],
-			[
-				"load_",
-				"load_level"
-			],
-			[
-				"l",
-				"list_of_listes_of_poses_and_names"
-			],
-			[
-				"pos",
-				"pos_y"
-			],
-			[
-				"li",
-				"list_of_listes_of_poses"
-			],
-			[
-				"num_",
-				"num_of_basic_bullets"
-			],
-			[
-				"C",
-				"class_gg"
-			],
-			[
-				"class_",
-				"class_basic"
-			],
-			[
-				"gg",
-				"gg_bullet_sprites"
-			],
-			[
-				"colo",
-				"colorkey"
-			],
-			[
-				"color",
-				"color_key"
-			],
-			[
 				"num",
 				"num"
 			]
@@ -152,85 +12,37 @@
 	"buffers":
 	[
 		{
-			"file": "constants.py",
+			"file": "/C/python/test_progect/PygameProject/main.py",
 			"settings":
 			{
-				"buffer_size": 925,
+				"buffer_size": 5917,
 				"encoding": "UTF-8",
 				"line_ending": "Unix"
 			}
 		},
 		{
-			"file": "class_enemy.py",
+			"file": "/C/python/test_progect/PygameProject/constants.py",
 			"settings":
 			{
-				"buffer_size": 1846,
+				"buffer_size": 1007,
 				"encoding": "UTF-8",
 				"line_ending": "Unix"
 			}
 		},
 		{
-			"file": "class_basic.py",
+			"file": "/C/python/test_progect/PygameProject/functions.py",
 			"settings":
 			{
-				"buffer_size": 3972,
+				"buffer_size": 3341,
 				"encoding": "UTF-8",
 				"line_ending": "Unix"
 			}
 		},
 		{
-			"file": "class_bullets.py",
+			"file": "/C/python/test_progect/PygameProject/class_no_go_tile.py",
 			"settings":
 			{
-				"buffer_size": 1671,
-				"encoding": "UTF-8",
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "main.py",
-			"settings":
-			{
-				"buffer_size": 5253,
-				"encoding": "UTF-8",
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "class_player_dote.py",
-			"settings":
-			{
-				"buffer_size": 149,
-				"encoding": "UTF-8",
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "functions.py",
-			"settings":
-			{
-				"buffer_size": 2910,
-				"encoding": "UTF-8",
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "class_tile.py",
-			"settings":
-			{
-				"buffer_size": 567,
-				"encoding": "UTF-8",
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"contents": "import pygame\nfrom pygame.color import Color\nfrom pygame import *\nimport os\nfrom constants import *\nfrom class_basic import *\n#\n\n\nclass Camera:\n    # зададим начальный сдвиг камеры\n    def __init__(self):\n        self.dx = 0\n        self.dy = 0\n\n    # сдвинуть объект obj на смещение камеры\n    def apply(self, obj):\n        obj.rect.x += self.dx\n        obj.rect.y += self.dy\n\n    # позиционировать камеру на объекте target\n    def update(self, target):\n        self.dx = -(target.rect.x + target.rect.w // 2 - width // 2)\n        self.dy = -(target.rect.y + target.rect.h // 2 - height // 2)\n        #self.dx = -(target.rect.x + target.rect.w // 2)\n        #self.dy = -(target.rect.y + target.rect.h // 2)\n",
-			"file": "1.0/class_camera.py",
-			"file_size": 795,
-			"file_write_time": 132216695202416395,
-			"settings":
-			{
-				"buffer_size": 708,
+				"buffer_size": 811,
 				"line_ending": "Unix"
 			}
 		}
@@ -238,30 +50,6 @@
 	"build_system": "Packages/Python/Python.sublime-build",
 	"build_system_choices":
 	[
-		[
-			[
-				[
-					"Packages/Python/Python.sublime-build",
-					""
-				],
-				[
-					"Packages/Python/Python.sublime-build",
-					"Input from input.txt"
-				],
-				[
-					"Packages/Python/Python.sublime-build",
-					"Run in Console"
-				],
-				[
-					"Packages/Python/Python.sublime-build",
-					"Run GUI"
-				]
-			],
-			[
-				"Packages/Python/Python.sublime-build",
-				""
-			]
-		],
 		[
 			[
 				[
@@ -307,33 +95,17 @@
 	},
 	"expanded_folders":
 	[
-		"/C/python/projectalpha/smtgame/PygameProject"
 	],
 	"file_history":
 	[
-		"/C/python/projectalpha/smtgame/PygameProject/class_no_go_tile.py",
-		"/C/python/projectalpha/smtgame/PygameProject/class_tile.py",
-		"/C/python/projectalpha/smtgame/PygameProject/class_player_dote.py",
-		"/C/python/projectalpha/smtgame/PygameProject/class_gg.py",
-		"/C/python/projectalpha/smtgame/PygameProject/1.0/class_tile.py",
-		"/C/python/projectalpha/smtgame/PygameProject/1.0/main.py",
-		"/C/python/projectalpha/smtgame/PygameProject/1.0/class_bullets.py",
-		"/C/python/projectalpha/smtgame/PygameProject/1.0/class_basic_bullets.py",
-		"/C/python/projectalpha/smtgame/PygameProject/class_basic_bullets.py",
-		"/C/python/projectalpha/smtgame/PygameProject/class_bullets.py",
-		"/C/python/projectalpha/smtgame/PygameProject/mel.py",
 		"/C/python/projectalpha/smtgame/PygameProject/heart.py",
-		"/C/python/projectalpha/smtgame/PygameProject/class_camera.py",
-		"/C/python/projectalpha/smtgame/PygameProject/functions.py",
-		"/C/python/NOT for project/tipo_game.py",
-		"/C/python/projectalpha/smtgame/PygameProject/old_main.py",
-		"/C/python/projectalpha/smtgame/PygameProject/for_tests.py",
-		"/C/python/projectalpha/smtgame/PygameProject/gg.py",
-		"/C/python/projectalpha/smtgame/PygameProject/Data/im_for_tests.jpg",
-		"/C/python/projectalpha/smtgame/PygameProject/README.md",
 		"/C/python/projectalpha/smtgame/PygameProject/class_basic.py",
-		"/C/python/projectalpha/smtgame/PygameProject/Data/class_basic.py",
-		"/C/python/projectalpha/smtgame/PygameProject/funcs.py",
+		"/C/python/test_progect/PygameProject/class_enemy.py",
+		"/C/python/projectalpha/smtgame/PygameProject/functions.py",
+		"/C/python/projectalpha/smtgame/PygameProject/constants.py",
+		"/C/python/projectalpha/smtgame/PygameProject/.git/COMMIT_EDITMSG",
+		"/C/python/project/Alcan.py",
+		"/C/python/projectalpha/smtgame/PygameProject/README.md",
 		"/C/Users/Лёша/Desktop/notes",
 		"/C/Users/Лёша/Desktop/solo.py",
 		"/C/Users/Лёша/Desktop/saved things/f1.ui",
@@ -375,7 +147,7 @@
 	],
 	"find":
 	{
-		"height": 31.0
+		"height": 29.0
 	},
 	"find_in_files":
 	{
@@ -407,181 +179,116 @@
 	"groups":
 	[
 		{
-			"selected": 4,
+			"selected": 2,
 			"sheets":
 			[
 				{
 					"buffer": 0,
-					"file": "constants.py",
+					"file": "/C/python/test_progect/PygameProject/main.py",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 925,
+						"buffer_size": 5917,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								150,
-								150
+								5854,
+								5498
 							]
 						],
 						"settings":
 						{
-							"autopep8_view_autosave": true,
-							"open_with_edit": true,
+							"syntax": "Packages/Python/Python.sublime-syntax",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 2739.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 3,
+					"type": "text"
+				},
+				{
+					"buffer": 1,
+					"file": "/C/python/test_progect/PygameProject/constants.py",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 1007,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								1007,
+								0
+							]
+						],
+						"settings":
+						{
 							"syntax": "Packages/Python/Python.sublime-syntax"
 						},
 						"translation.x": 0.0,
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 7,
-					"type": "text"
-				},
-				{
-					"buffer": 1,
-					"file": "class_enemy.py",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 1846,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								1454,
-								1454
-							]
-						],
-						"settings":
-						{
-							"autopep8_view_autosave": true,
-							"open_with_edit": true,
-							"syntax": "Packages/Python/Python.sublime-syntax"
-						},
-						"translation.x": 0.0,
-						"translation.y": 1272.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 6,
+					"stack_index": 2,
 					"type": "text"
 				},
 				{
 					"buffer": 2,
-					"file": "class_basic.py",
+					"file": "/C/python/test_progect/PygameProject/functions.py",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 3972,
+						"buffer_size": 3341,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								2494,
-								2494
+								3341,
+								0
 							]
 						],
 						"settings":
 						{
-							"autopep8_view_autosave": true,
 							"syntax": "Packages/Python/Python.sublime-syntax",
 							"tab_size": 4,
 							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 1395.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 4,
-					"type": "text"
-				},
-				{
-					"buffer": 3,
-					"file": "class_bullets.py",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 1671,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								1093,
-								1093
-							]
-						],
-						"settings":
-						{
-							"autopep8_view_autosave": true,
-							"syntax": "Packages/Python/Python.sublime-syntax",
-							"tab_size": 4,
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": 0.0,
-						"translation.y": 316.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 5,
-					"type": "text"
-				},
-				{
-					"buffer": 4,
-					"file": "main.py",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 5253,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								4687,
-								4687
-							]
-						],
-						"settings":
-						{
-							"autopep8_view_autosave": true,
-							"open_with_edit": true,
-							"syntax": "Packages/Python/Python.sublime-syntax"
-						},
-						"translation.x": 0.0,
-						"translation.y": 2567.0,
+						"translation.y": 468.0,
 						"zoom_level": 1.0
 					},
 					"stack_index": 0,
 					"type": "text"
 				},
 				{
-					"buffer": 5,
-					"file": "class_player_dote.py",
+					"buffer": 3,
+					"file": "/C/python/test_progect/PygameProject/class_no_go_tile.py",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 149,
+						"buffer_size": 811,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								111,
-								111
+								0,
+								0
 							]
 						],
 						"settings":
 						{
-							"autopep8_view_autosave": true,
 							"syntax": "Packages/Python/Python.sublime-syntax"
 						},
 						"translation.x": 0.0,
@@ -590,107 +297,17 @@
 					},
 					"stack_index": 1,
 					"type": "text"
-				},
-				{
-					"buffer": 6,
-					"file": "functions.py",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 2910,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								829,
-								831
-							]
-						],
-						"settings":
-						{
-							"autopep8_view_autosave": true,
-							"syntax": "Packages/Python/Python.sublime-syntax",
-							"tab_size": 4,
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": 0.0,
-						"translation.y": 458.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 2,
-					"type": "text"
-				},
-				{
-					"buffer": 7,
-					"file": "class_tile.py",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 567,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								426,
-								426
-							]
-						],
-						"settings":
-						{
-							"autopep8_view_autosave": true,
-							"syntax": "Packages/Python/Python.sublime-syntax"
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 3,
-					"type": "text"
-				},
-				{
-					"buffer": 8,
-					"file": "1.0/class_camera.py",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 708,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								708,
-								708
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/Python/Python.sublime-syntax",
-							"tab_size": 4,
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": 0.0,
-						"translation.y": 107.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 8,
-					"type": "text"
 				}
 			]
 		}
 	],
 	"incremental_find":
 	{
-		"height": 31.0
+		"height": 29.0
 	},
 	"input":
 	{
-		"height": 43.0
+		"height": 0.0
 	},
 	"layout":
 	{
@@ -715,10 +332,6 @@
 		]
 	},
 	"menu_visible": true,
-	"output.autopep8":
-	{
-		"height": 0.0
-	},
 	"output.exec":
 	{
 		"height": 158.0
@@ -735,7 +348,7 @@
 	"project": "PygameProject.sublime-project",
 	"replace":
 	{
-		"height": 58.0
+		"height": 54.0
 	},
 	"save_all_on_build": true,
 	"select_file":

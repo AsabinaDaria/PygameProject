@@ -7,94 +7,6 @@ from class_basic_bullets import *
 clock = pygame.time.Clock()
 screen = pygame.display.set_mode(size)
 
-def pause_screen():
-    intro_text = ["press F to continue"]
-
-    fon = pygame.transform.scale(load_image('nothing.png'), (1500, 1000))
-    screen.blit(fon, (0, 0))
-    font = pygame.font.Font(None, 30)
-    text_coord = 10
-    for line in intro_text:
-        string_rendered = font.render(line, 2, pygame.Color('white'))
-        intro_rect = string_rendered.get_rect()
-        text_coord += 10
-        intro_rect.top = text_coord
-        intro_rect.x = 600
-        text_coord += intro_rect.height
-        screen.blit(string_rendered, intro_rect)
-
-    while True:
-        for event in pygame.event.get():
-            if event.type == pygame.QUIT:
-                pygame.quit()
-                running = False
-            elif event.type == pygame.KEYDOWN:
-                if event.key == 102:
-                    return
-        pygame.display.flip()
-        clock.tick(60)
-
-
-def dead_screen():
-    intro_text = ["You died :("]
-
-    fon = pygame.transform.scale(load_image('nothing.png'), (1500, 1000))
-    screen.blit(fon, (0, 0))
-    font = pygame.font.Font(None, 30)
-    text_coord = 20
-    for line in intro_text:
-        string_rendered = font.render(line, 2, pygame.Color('white'))
-        intro_rect = string_rendered.get_rect()
-        text_coord += 15
-        intro_rect.top = text_coord
-        intro_rect.x = 650
-        text_coord += intro_rect.height
-        screen.blit(string_rendered, intro_rect)
-
-    while True:
-        for event in pygame.event.get():
-            if event.type == pygame.QUIT:
-                pygame.quit()
-                running = False
-            elif event.type == pygame.KEYDOWN or event.type == pygame.MOUSEBUTTONDOWN:
-                pygame.quit()
-                running = False
-        pygame.display.flip()
-        clock.tick(60)
-
-
-def start_screen():
-    intro_text = ["Lazy Reborn", "",
-                  "your goal is to get to the end and defeat all the enemies",
-                  "hero movement with arrows and keyboard",
-                  "shoot with spacebar",
-                  "good luck!",
-                  "",
-                  "--press any button to continue--"]
-
-    fon = pygame.transform.scale(load_image('fon.png'), (1500, 1000))
-    screen.blit(fon, (0, 0))
-    font = pygame.font.Font(None, 30)
-    text_coord = 20
-    for line in intro_text:
-        string_rendered = font.render(line, 2, pygame.Color('blue'))
-        intro_rect = string_rendered.get_rect()
-        text_coord += 15
-        intro_rect.top = text_coord
-        intro_rect.x = 10
-        text_coord += intro_rect.height
-        screen.blit(string_rendered, intro_rect)
-
-    while True:
-        for event in pygame.event.get():
-            if event.type == pygame.QUIT:
-                pygame.quit()
-                running = False
-            elif event.type == pygame.KEYDOWN or event.type == pygame.MOUSEBUTTONDOWN:
-                return
-        pygame.display.flip()
-        clock.tick(60)
-
 
 def load_image(name, colorkey=None):
     fullname = os.path.join('data', name)
@@ -126,6 +38,7 @@ class Basic(pygame.sprite.Sprite):
         self.alive = True
         self.tics = 0
         self.sp = [0, 20, 40, 60, 80]
+        self.score = 0
 
     def cut_sheet(self, sheet, columns, rows):
         self.rect = pygame.Rect(0, 0, sheet.get_width() // columns,
@@ -203,3 +116,64 @@ class Basic(pygame.sprite.Sprite):
             return self.chars[0]
         else:
             return self.chars
+
+    def get_score(self):
+        return self.score
+
+    def change_score(self, n):
+        self.score += n
+
+    def follow_pos(self, pos, move_gg_up, move_gg_down,
+                   move_gg_left, move_gg_right):
+        tar_x, tar_y = pos[0], pos[1]
+        # and abs(tar_y - self.y) < 200 and abs(tar_x - self.x) < 200:
+        if tar_y > self.rect.top:
+            self.rect.top += 2
+            self.y_change(2)
+            move_gg_down = True
+            self.dir_move(move_gg_up, move_gg_down,
+                          move_gg_left, move_gg_right)
+            self.rect.top += 2
+            if pygame.sprite.spritecollideany(self, no_go_tiles_group):
+                self.rect.top -= 2
+                self.y_change(-2)
+            self.rect.top -= 2
+        # and abs(tar_y - self.y) < 200 and abs(tar_x - self.x) < 200:
+        elif tar_y < self.rect.top:
+            self.rect.top -= 2
+            self.y_change(-2)
+            move_gg_up = True
+            self.dir_move(move_gg_up, move_gg_down,
+                          move_gg_left, move_gg_right)
+            self.rect.top -= 2
+            if pygame.sprite.spritecollideany(self, no_go_tiles_group):
+                self.rect.top += 2
+                self.y_change(+2)
+            self.rect.top += 2
+        # and abs(tar_x - self.x) < 200 and abs(tar_y - self.y) < 200:
+        if tar_x - 40 > self.rect.left:
+            self.rect.left += 2
+            self.x_change(2)
+            move_gg_right = True
+            self.dir_move(move_gg_up, move_gg_down,
+                          move_gg_left, move_gg_right)
+            self.rect.left += 2
+            if pygame.sprite.spritecollideany(self, no_go_tiles_group):
+                self.rect.left -= 2
+                self.x_change(-2)
+            self.rect.left -= 2
+        # and abs(tar_x - self.x) < 200 and abs(tar_y - self.y) < 200:
+        elif tar_x + 40 < self.rect.left:
+            self.rect.left -= 2
+            self.x_change(-2)
+            move_gg_left = True
+            self.dir_move(move_gg_up, move_gg_down,
+                          move_gg_left, move_gg_right)
+            self.rect.left -= 2
+            if pygame.sprite.spritecollideany(self, no_go_tiles_group):
+                self.rect.left += 2
+                self.x_change(+2)
+            self.rect.left += 2
+
+    def get_cur_frame(self):
+        return self.cur_frame

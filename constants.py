@@ -25,7 +25,8 @@ enemy_group = pygame.sprite.Group()
 bullets_group = pygame.sprite.Group()
 mels_group = pygame.sprite.Group()
 hearts_group = pygame.sprite.Group()
+end_level_tiles_group = pygame.sprite.Group()
+items_group = pygame.sprite.Group()
 
 # для клеточного поля
 tile_width = tile_height = 50
-mouse_flag = False
