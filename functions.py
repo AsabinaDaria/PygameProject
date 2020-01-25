@@ -4,9 +4,11 @@ from pygame import *
 import os
 from constants import *
 from class_basic import *
+from class_gg import *
 from class_enemy import *
 from heart import *
 from class_no_go_tile import *
+from class_player_dote import *
 from class_tile import *
 from class_end_level_tile import *
 from class_medpack import *
@@ -49,7 +51,7 @@ def load_level(filename):
 #        self.rect = self.image.get_rect().move(tile_width * pos_x, tile_height * pos_y)
 
 
-def generate_level(level):  # загрузка уровня
+def generate_level(level):
     no_go_dotes = []
     end_level_counter = 0
     new_player, x, y = None, None, None
@@ -70,7 +72,7 @@ def generate_level(level):  # загрузка уровня
                 End_level_tile('end_level_locked_door', x, y)
             elif level[y][x] == '@':
                 Tile('empty', x, y)
-                new_player = Basic(load_image(
+                new_player = Gg(load_image(
                     "just_dote.jpg", Color('White')), 4, 1, x * 50, y * 50, ['basic'])
                 new_player.add(player_group)
             elif level[y][x] == '!':
@@ -99,7 +101,7 @@ def generate_level(level):  # загрузка уровня
     return new_player, x, y
 
 
-def pause_screen():  # экран паузы
+def pause_screen():
     intro_text = ["press F to continue"]
 
     fon = pygame.transform.scale(load_image('nothing.png'), (1500, 1000))
@@ -127,14 +129,40 @@ def pause_screen():  # экран паузы
         clock.tick(60)
 
 
-def start_screen(): # заставка
+def dead_screen():
+    intro_text = ["You died :("]
+
+    fon = pygame.transform.scale(load_image('nothing.png'), (1500, 1000))
+    screen.blit(fon, (0, 0))
+    font = pygame.font.Font(None, 30)
+    text_coord = 20
+    for line in intro_text:
+        string_rendered = font.render(line, 2, pygame.Color('white'))
+        intro_rect = string_rendered.get_rect()
+        text_coord += 15
+        intro_rect.top = text_coord
+        intro_rect.x = 650
+        text_coord += intro_rect.height
+        screen.blit(string_rendered, intro_rect)
+
+    while True:
+        for event in pygame.event.get():
+            if event.type == pygame.QUIT:
+                pygame.quit()
+                running = False
+            elif event.type == pygame.KEYDOWN or event.type == pygame.MOUSEBUTTONDOWN:
+                pygame.quit()
+                running = False
+        pygame.display.flip()
+        clock.tick(60)
+
+
+def start_screen():
     intro_text = ["Lazy Reborn", "",
-                  "your goal is to get the highest score",
-                  "initially the hero is controlled by arrows and buttons from the keyboard",
-                  "to change the control between the mouse and keyboard click ENTER",
-                  "shoot with spacebar under the control of the keyboard",
-                  "shoot with pressing the right mouse button under the control of the keyboard",
-                  "press ESCAPE to pause",
+                  "your goal is to get to the end and defeat all the enemies",
+                  "hero movement with arrows and keyboard",
+                  "shoot with spacebar",
+                  "good luck!",
                   "",
                   "--press any button to continue--"]
 
@@ -145,7 +173,7 @@ def start_screen(): # заставка
     for line in intro_text:
         string_rendered = font.render(line, 2, pygame.Color('blue'))
         intro_rect = string_rendered.get_rect()
-        text_coord += 10
+        text_coord += 15
         intro_rect.top = text_coord
         intro_rect.x = 10
         text_coord += intro_rect.height

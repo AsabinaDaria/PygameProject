@@ -3,7 +3,7 @@ from class_basic import *
 from heart import *
 
 
-class Medpack(Basic):  # восстановление всех жизней
+class Medpack(Basic):
     def used(self):
         for sprite in hearts_group:
             self.kill()

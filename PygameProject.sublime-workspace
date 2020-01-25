@@ -15,7 +15,16 @@
 			"file": "/C/python/test_progect/PygameProject/main.py",
 			"settings":
 			{
-				"buffer_size": 5917,
+				"buffer_size": 5700,
+				"encoding": "UTF-8",
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "/C/python/test_progect/PygameProject/class_enemy.py",
+			"settings":
+			{
+				"buffer_size": 3766,
 				"encoding": "UTF-8",
 				"line_ending": "Unix"
 			}
@@ -24,7 +33,7 @@
 			"file": "/C/python/test_progect/PygameProject/constants.py",
 			"settings":
 			{
-				"buffer_size": 1007,
+				"buffer_size": 943,
 				"encoding": "UTF-8",
 				"line_ending": "Unix"
 			}
@@ -33,7 +42,7 @@
 			"file": "/C/python/test_progect/PygameProject/functions.py",
 			"settings":
 			{
-				"buffer_size": 3341,
+				"buffer_size": 3161,
 				"encoding": "UTF-8",
 				"line_ending": "Unix"
 			}
@@ -95,6 +104,7 @@
 	},
 	"expanded_folders":
 	[
+		"/C/python/projectalpha/smtgame/PygameProject"
 	],
 	"file_history":
 	[
@@ -179,7 +189,7 @@
 	"groups":
 	[
 		{
-			"selected": 2,
+			"selected": 1,
 			"sheets":
 			[
 				{
@@ -188,15 +198,15 @@
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 5917,
+						"buffer_size": 5700,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								5854,
-								5498
+								0,
+								0
 							]
 						],
 						"settings":
@@ -206,26 +216,56 @@
 							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 2739.0,
+						"translation.y": 2721.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 3,
+					"stack_index": 1,
 					"type": "text"
 				},
 				{
 					"buffer": 1,
-					"file": "/C/python/test_progect/PygameProject/constants.py",
+					"file": "/C/python/test_progect/PygameProject/class_enemy.py",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 1007,
+						"buffer_size": 3766,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								1007,
+								0,
+								0
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Python/Python.sublime-syntax",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 1909.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 0,
+					"type": "text"
+				},
+				{
+					"buffer": 2,
+					"file": "/C/python/test_progect/PygameProject/constants.py",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 943,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								0,
 								0
 							]
 						],
@@ -237,23 +277,23 @@
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 2,
+					"stack_index": 4,
 					"type": "text"
 				},
 				{
-					"buffer": 2,
+					"buffer": 3,
 					"file": "/C/python/test_progect/PygameProject/functions.py",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 3341,
+						"buffer_size": 3161,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								3341,
+								0,
 								0
 							]
 						],
@@ -267,11 +307,11 @@
 						"translation.y": 468.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 0,
+					"stack_index": 2,
 					"type": "text"
 				},
 				{
-					"buffer": 3,
+					"buffer": 4,
 					"file": "/C/python/test_progect/PygameProject/class_no_go_tile.py",
 					"semi_transient": false,
 					"settings":
@@ -295,7 +335,7 @@
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 1,
+					"stack_index": 3,
 					"type": "text"
 				}
 			]

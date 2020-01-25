@@ -2,7 +2,7 @@ from constants import *
 from class_bullets import *
 from class_basic_bullets import *
 
-###материнский класс для гг и нпс ###
+### похоже что это материнский класс для гг и нпс ###
 
 clock = pygame.time.Clock()
 screen = pygame.display.set_mode(size)
@@ -35,13 +35,12 @@ class Basic(pygame.sprite.Sprite):
         self.rect_top_to_work = 0
         self.rect_left_to_work = 0
         self.mask = pygame.mask.from_surface(self.image)
-        self.alive = True  # проверка на то, жив ли гг
+        self.alive = True
         self.tics = 0
-        self.sp = [0, 20, 40, 60, 80] # жизни гг
-        self.score = 0  # счет
-        self.robot_hit = pygame.mixer.Sound("Data/robot_hit.wav")  # урон врага
+        self.sp = [0, 20, 40, 60, 80]
+        self.score = 0
 
-    def cut_sheet(self, sheet, columns, rows): # для анимации спрайтов
+    def cut_sheet(self, sheet, columns, rows):
         self.rect = pygame.Rect(0, 0, sheet.get_width() // columns,
                                 sheet.get_height() // rows)
         for j in range(rows):
@@ -82,7 +81,7 @@ class Basic(pygame.sprite.Sprite):
                 self.cur_frame = (self.cur_frame + 1) % len(self.frames)
                 self.image = self.frames[self.cur_frame]
 
-    def get_pos(self):  # позиция гг
+    def get_pos(self):
         return self.x, self.y
 
     def make_pew(self, kind_of_pew, pos, move_up, move_down, move_left, move_right):
@@ -92,7 +91,7 @@ class Basic(pygame.sprite.Sprite):
         elif kind_of_pew[0] == 'basic':
             self.make_basic_pew(self.direction, pos)
 
-    def make_basic_pew(self, direction, pos):  # новая пуля
+    def make_basic_pew(self, direction, pos):
         new_bullet = BasicBullet(load_image("basic_bullet.jpg",
                                             Color('White')), 1, 1, pos[0], pos[1], direction)
 
@@ -147,7 +146,7 @@ class Basic(pygame.sprite.Sprite):
             self.dir_move(move_gg_up, move_gg_down,
                           move_gg_left, move_gg_right)
             self.rect.top -= 2
-            if pygame.sprite.spritecollideany(self, no_go_tiles_group):  # проверка на наличие непроходимых спрайтов
+            if pygame.sprite.spritecollideany(self, no_go_tiles_group):
                 self.rect.top += 2
                 self.y_change(+2)
             self.rect.top += 2

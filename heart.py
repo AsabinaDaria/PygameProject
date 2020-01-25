@@ -13,7 +13,7 @@ class Heart(pygame.sprite.Sprite):
         self.x = x
         self.y = y
 
-    def cut_sheet(self, sheet, columns, rows):  # обрезка спрайтов
+    def cut_sheet(self, sheet, columns, rows):
         self.rect = pygame.Rect(0, 0, sheet.get_width() // columns,
                                 sheet.get_height() // rows)
         for j in range(rows):
