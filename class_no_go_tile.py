@@ -7,7 +7,7 @@ from class_basic import *
 #
 
 
-class No_go_tile(pygame.sprite.Sprite):
+class No_go_tile(pygame.sprite.Sprite):  # спрайты, по которым нельзя ходить
     def __init__(self, tile_type, pos_x, pos_y):
         super().__init__(no_go_tiles_group, all_sprites)
         self.tile_images = {'hor': load_image('hor.png'), 'end_level_locked_door': load_image('end_level_locked_door.jpg'), 'end_level_unlocked_door': load_image('end_level_unlocked_door.jpg'), 'nothing': load_image('nothing.png'), 'ver': load_image('ver.png'), 'wall': load_image(

@@ -26,7 +26,7 @@ class Bullet(pygame.sprite.Sprite):
                 self.frames.append(sheet.subsurface(pygame.Rect(
                     frame_location, self.rect.size)))
 
-    def update(self):
+    def update(self):  #  движение пуль
         if self.alive:
             if self.move_up == True and self.move_right != True and self.move_left != True:
                 self.rect.top -= 3
